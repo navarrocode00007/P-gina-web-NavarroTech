@@ -1,0 +1,668 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    margin-left: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.icon__menu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+}
+
+.icon__menu i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.menu__side{
+    width: 80px;
+    height: 100%;
+    background: #1783db;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #1783db;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.name__page{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 70px; 
+    margin-right: 20px !important;
+}
+
+.name__page i{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color: #ffffffb2;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+}
+
+.options__menu a:hover{
+    color: white;
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}
+
+/* Estilos para el recuadro del usuario */
+.user-info {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-align: center;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+/********************************/
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    background-color: #3498db; /* Azul claro */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.nota-aclarativa {
+    font-style: italic; /* Estilo cursiva */
+    color: #666; /* Color de texto gris */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Estilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Estilos alternos de fila */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos de imagen en la tabla */
+.table img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos de encabezado de tabla en dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px;
+    }
+}
+
+
+/*******************/
+
+/*MAIN INFO PROYECTOS*/
+
+.breadcrumb-link {
+    color: #007bff; /* Tonos azulados */
+    font-style: italic; /* Cursiva */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.breadcrumb-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.breadcrumb-symbol {
+    margin: 0 5px; /* Espaciado entre símbolos */
+}
+
+/*Añadir epica*/
+
+.centered-content {
+    text-align: center;
+    margin-top: 50px; 
+}
+
+.add-epic-button {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.aniade {
+    background-color: #007bff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.aniade:hover {
+    background-color: #0056b3; /* Cambia el color de fondo del botón al pasar el mouse */
+}
+
+.aniade i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.aniade h4 {
+    font-size: 18px;
+    margin: 0;
+}
+
+/*FORMULARIO*/
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-input-sm,
+.form-textarea-sm {
+    width: calc(50% - 6px);
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.form-textarea-sm {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.centered {
+    text-align: center;
+}
+
+/*Cajas formulario*/
+
+.form-group-cajas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.select-container {
+    position: relative;
+}
+
+.select-container select {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.form-group-cajas-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* tabla */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-table th, .modern-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.modern-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.modern-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.modern-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/*VER REQUISITOS*/
+
+.requisito-title {
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 40px; /* Espacio inferior */
+    font-size: 40px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    color: #333; /* Color del texto */
+}
+
+/* Estilos para la caja dividida en dos partes */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px; /* Margen superior para separarlo del título del requisito */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9; /* Color de fondo para las columnas */
+    border-radius: 10px; /* Borde redondeado */
+}
+
+.top-half, .bottom-half {
+    padding: 20px; /* Espacio interno */
+}
+
+.top-half {
+    background-color: #919090; /* Color de fondo para la parte superior */
+    height: auto; /* Altura automática para adaptarse al contenido */
+    display: flex; /* Establece el contenedor como un contenedor flexible */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    flex-grow: 0; /* No permitir que la caja superior crezca más allá de su contenido */
+    border-top-left-radius: 10px; /* Borde redondeado en la esquina superior izquierda */
+    border-top-right-radius: 10px; /* Borde redondeado en la esquina superior derecha */
+}
+
+.bottom-half {
+    padding: 20px; /* Ajusta el espaciado interno según sea necesario */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-bottom-left-radius: 10px; /* Borde redondeado en la esquina inferior izquierda */
+    border-bottom-right-radius: 10px; /* Borde redondeado en la esquina inferior derecha */
+}
+
+.bottom-half p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #666; /* Color de texto más sombreado */
+
+}
+
+.bottom-half p:last-child {
+    margin-bottom: 0; /* Eliminar el margen inferior del último párrafo */
+}
+
+.requisito-title {
+    margin-bottom: 20px; /* Margen inferior para separarlo de las columnas */
+    font-size: 24px; /* Tamaño de fuente del título del requisito */
+}
+
+/* Estilos para el contenido dentro de las columnas */
+.grid-container .column h2 {
+    font-size: 20px; /* Tamaño de fuente para los títulos dentro de las columnas */
+    margin-bottom: 10px; /* Margen inferior para separar los títulos del contenido */
+}
+
+.label2 {
+    color: #080808; /* Color de texto más sombreado */
+}
+
+/* Estilos para el botón "Crear Caso de Uso" */
+#crear_caso_uso_btn {
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 15px 30px; /* Aumentar el padding para hacerlo más grande */
+    font-size: 18px; /* Tamaño de fuente */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+#crear_caso_uso_btn:hover {
+    background-color: #45a049; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para el formulario de creación de casos de uso */
+
+#crear_caso_uso_form {
+    background-color: #f9f9f9; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px; /* Espacio entre el botón y el formulario */
+}
+
+#crear_caso_uso_form h2 {
+    margin-bottom: 20px; /* Espacio inferior */
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #333; /* Color del texto */
+}
+
+#crear_caso_uso_form label {
+    display: block; /* Mostrar cada etiqueta en una línea separada */
+    margin-bottom: 5px; /* Espacio inferior entre etiquetas */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#crear_caso_uso_form input[type="text"],
+#crear_caso_uso_form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interno */
+    margin-bottom: 15px; /* Espacio inferior */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* El tamaño incluye el relleno y el borde */
+}
+
+#crear_caso_uso_form textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+}
+
+#crear_caso_uso_form button[type="submit"] {
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+#crear_caso_uso_form button[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para la flecha hacia abajo */
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    margin: 10px auto; /* Centra horizontalmente */
+}
+
+/* Estilos para la lista de casos de uso */
+.bottom-half ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-half ul li {
+    margin-left: 20px; /* Sangría para los elementos de la lista */
+}
+
+.trazabilidad-column {
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.trazabilidad-column div {
+    margin-bottom: 10px; /* Espacio entre los elementos */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos para los formularios */
+.form-container {
+    margin-top: 20px;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el menú desplegable */
+#formSelector {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* Estilos para el menú desplegable */
+#formSelector {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    width: 250px; 
+    height: 70px;
+    margin-left: 130px; 
+}
+
+#formSelector option {
+    padding: 8px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+
+#formSelector:hover,
+#formSelector:focus {
+    border-color: #aaa;
+    outline: none;
+}
+
+
+/* Estilos para el contenedor del menú desplegable y el formulario */
+.select-container {
+    position: relative;
+    margin-top: 20px; 
+}
+
+
+
+.custom-title {
+    position: absolute; /* Establecer la posición absoluta */
+    top: 180px; /* posición vertical */
+    left: 1180px; /* posición horizontal */
+    z-index: 1000; /* para asegurarse de que esté por encima de otros elementos */
+}

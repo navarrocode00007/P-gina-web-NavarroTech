@@ -1,0 +1,237 @@
+/* Estilos General */
+
+:root {
+  --tranquil-blue:rgba(0, 128, 255, 0.5); 
+  --background-color: #F4F4F4;
+  --text-color: #2C2C2C; 
+  /* background-color: rgba(0, 128, 255, 0.5); */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--tranquil-blue);
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--background-color);
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  color: var(--text-color);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  header {
+      flex-wrap: wrap;
+  }
+
+  nav {
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 1rem;
+  }
+}
+
+
+
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../img/fondo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(106, 141, 163, 0.7);
+  background-blend-mode: multiply;
+  color: var(--background-color);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero .cta {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--background-color);
+  color: var(--tranquil-blue);
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.hero .cta:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Sección Categorías */
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  place-items: center;
+}
+
+.categoria {
+  flex: 1;
+  max-width: 300px;
+  background-color: var(--background-color);
+  border: 1px solid var(--tranquil-blue);
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.categoria:hover {
+  transform: scale(1.05);
+}
+
+.categoria a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.categoria a:hover {
+  color: var(--tranquil-blue);
+}
+
+@media (min-width:768px){
+  .categoria{
+    min-width: 300px;
+  }
+}
+
+/* Galería de Imágenes */
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.proyecto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proyecto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  min-height: 220px;
+}
+
+.proyecto a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.proyecto a:hover {
+  color: var(--tranquil-blue);
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--tranquil-blue);
+  padding: 2rem;
+  color: var(--background-color);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a {
+  color: var(--background-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: var(--text-color);
+}
+
+.redes-sociales {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.redes-sociales a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--tranquil-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.redes-sociales a:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
